@@ -5,42 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lauk — From our table to the world</title>
 <meta name="description" content="Real Malaysian flavour, traced to its source. Community-sourced. Small batch. Built to travel.">
-
 <meta property="og:title" content="Lauk — From our table to the world">
 <meta property="og:description" content="Real Malaysian flavour, traced to its source. Community-sourced. Small batch. Built to travel.">
 <meta property="og:url" content="https://lauk.com.my">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lauk.com.my/og-image.jpg">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lauk — From our table to the world">
 <meta name="twitter:description" content="Real Malaysian flavour, traced to its source.">
 <meta name="twitter:image" content="https://lauk.com.my/og-image.jpg">
-
 <link rel="canonical" href="https://lauk.com.my">
-<script src="https://web3forms.com/client/script.js" async defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#E8E0D4;
-  --bg2:#EDE6DC;
-  --ink:#1A1208;
-  --red:#9B2335;
-  --red2:#C13040;
-  --green:#1C3A2A;
-  --cream:#F5EDE0;
-  --muted:#7A6A55;
-  --neu-light:#F5EDE0;
-  --neu-dark:#C8BBA8;
+  --bg:#E8E0D4;--bg2:#EDE6DC;--ink:#1A1208;--red:#9B2335;--red2:#C13040;
+  --green:#1C3A2A;--cream:#F5EDE0;--muted:#7A6A55;
+  --neu-light:#F5EDE0;--neu-dark:#C8BBA8;
   --neu-s:6px 6px 14px #C8BBA8,-6px -6px 14px #F5EDE0;
   --neu-in:inset 4px 4px 10px #C8BBA8,inset -4px -4px 10px #F5EDE0;
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
 nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(155,35,53,.07)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -48,7 +37,7 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .nav-wordmark{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.08em;color:var(--ink)}
 .nav-pill{font-size:.55rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;padding:5px 16px;border-radius:100px;background:var(--bg);box-shadow:var(--neu-s);color:var(--muted)}
 
-/* ── HERO ── */
+/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 2.5rem 6rem;position:relative;overflow:hidden}
 .hero-inner{max-width:1100px;margin:0 auto;width:100%}
 .hero-title{font-family:'Syne',sans-serif;font-size:clamp(4.5rem,12vw,10.5rem);font-weight:800;line-height:.88;letter-spacing:-.035em;color:var(--ink);margin-bottom:3rem}
@@ -59,26 +48,23 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .btn-primary{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:1.05rem 2.5rem;border-radius:100px;border:none;background:var(--red);color:#fff;cursor:pointer;box-shadow:4px 4px 12px rgba(155,35,53,.3),-2px -2px 6px rgba(155,35,53,.08);transition:all .2s}
 .btn-primary:hover{background:var(--red2);transform:translateY(-1px);box-shadow:6px 6px 18px rgba(155,35,53,.35)}
-.btn-primary:active{transform:translateY(0)}
 .btn-ghost{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;transition:color .2s}
 .btn-ghost:hover{color:var(--ink)}
 .btn-ghost svg{transition:transform .2s}
 .btn-ghost:hover svg{transform:translateX(4px)}
-
-/* marquee */
 .marquee-wrap{overflow:hidden;margin-top:5rem;padding:1.5rem 0}
 .marquee{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
 .marquee span{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:800;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(155,35,53,.14);padding:0 2.5rem;user-select:none}
 .marquee span.sep{-webkit-text-stroke:1px rgba(155,35,53,.07)}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
-/* ── TICKER ── */
+/* TICKER */
 .ticker{background:var(--red);padding:.65rem 0;overflow:hidden}
 .ticker-track{display:flex;white-space:nowrap;animation:marquee 20s linear infinite}
 .ticker-item{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65);padding:0 2.5rem}
 .ticker-sep{color:rgba(255,255,255,.25)}
 
-/* ── STORY ── */
+/* STORY */
 .story{padding:8rem 2.5rem;background:var(--bg)}
 .story-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:8rem;align-items:center}
 .s-label{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;opacity:.8}
@@ -86,15 +72,15 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .s-title em{font-style:italic;font-weight:400;color:var(--muted)}
 .s-body{font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.95;margin-bottom:1.25rem;letter-spacing:.01em}
 .chapters{display:flex;flex-direction:column;gap:4px}
-.chapter{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border-radius:16px;transition:all .35s;cursor:default}
+.chapter{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border-radius:16px;transition:all .35s}
 .chapter.active{background:var(--bg);box-shadow:var(--neu-s)}
-.ch-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1;color:var(--neu-dark);flex-shrink:0;transition:color .3s;letter-spacing:-.02em}
+.ch-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1;color:var(--neu-dark);flex-shrink:0;letter-spacing:-.02em;transition:color .3s}
 .chapter.active .ch-num{color:var(--red)}
 .ch-era{font-family:'Syne Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;opacity:.6}
 .chapter.active .ch-era{opacity:1}
 .ch-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 
-/* ── PILLARS ── */
+/* PILLARS */
 .pillars{padding:8rem 2.5rem;background:var(--bg2)}
 .pillars-inner{max-width:1100px;margin:0 auto}
 .ph{margin-bottom:4.5rem}
@@ -108,7 +94,7 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .p-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.85rem;letter-spacing:-.01em}
 .p-body{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.9}
 
-/* ── PRODUCTS ── */
+/* PRODUCTS */
 .products{padding:8rem 2.5rem;background:var(--bg)}
 .products-inner{max-width:1100px;margin:0 auto}
 .prod-head{margin-bottom:4.5rem}
@@ -130,8 +116,20 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .pcard-attrs{display:flex;flex-wrap:wrap;gap:7px}
 .pattr{font-size:.56rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;background:var(--bg);box-shadow:var(--neu-in);color:var(--muted)}
 
-/* ── CTA ── */
-.cta{padding:8rem 2.5rem;background:var(--bg2)}
+/* INSTAGRAM */
+.insta{padding:6rem 2.5rem;background:var(--bg2)}
+.insta-inner{max-width:1100px;margin:0 auto}
+.insta-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.insta-head h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;line-height:.92;letter-spacing:-.03em;color:var(--ink)}
+.insta-head h2 em{color:var(--red);font-style:normal}
+.insta-follow{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;transition:opacity .2s}
+.insta-follow:hover{opacity:.7}
+.insta-follow svg{transition:transform .2s}
+.insta-follow:hover svg{transform:translateX(3px)}
+.insta-widget{width:100%}
+
+/* CTA */
+.cta{padding:8rem 2.5rem;background:var(--bg)}
 .cta-inner{max-width:800px;margin:0 auto;text-align:center}
 .cta-eyebrow{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;opacity:.8}
 .cta h2{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,8vw,8rem);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--ink);margin-bottom:1.75rem}
@@ -143,11 +141,10 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .notify-row input::placeholder{color:var(--muted);opacity:.55}
 .notify-row button{border:none;background:var(--red);color:#fff;font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 1.75rem;border-radius:100px;margin:4px;cursor:pointer;transition:all .2s;box-shadow:2px 2px 8px rgba(155,35,53,.28)}
 .notify-row button:hover{background:var(--red2)}
-.h-captcha{margin-bottom:.85rem;transform:scale(0.88);transform-origin:left center}
 .notify-note{font-size:.65rem;font-weight:300;letter-spacing:.06em;color:var(--muted);opacity:.6}
 .success-msg{display:none;font-size:.8rem;font-weight:400;letter-spacing:.04em;color:var(--green);margin-top:.85rem}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:3rem}
 .footer-brand{display:flex;align-items:center;gap:12px}
@@ -160,20 +157,11 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 .footer-copy{font-size:.58rem;font-weight:200;letter-spacing:.06em;color:rgba(245,237,224,.12)}
 .footer-tagline{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,237,224,.1)}
 
-/* ── INSTAGRAM ── */
-.insta{padding:6rem 2.5rem;background:var(--bg2)}
-.insta-inner{max-width:1100px;margin:0 auto}
-.insta-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
-.insta-head h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;line-height:.92;letter-spacing:-.03em;color:var(--ink)}
-.insta-head h2 em{color:var(--red);font-style:normal}
-.insta-follow{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);text-decoration:none;transition:opacity .2s}
-.insta-follow:hover{opacity:.7}
-.insta-follow svg{transition:transform .2s}
-.insta-follow:hover svg{transform:translateX(3px)}
+/* FADE */
 .fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .fade.in{opacity:1;transform:translateY(0)}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .story-inner{grid-template-columns:1fr;gap:4rem}
   .pillar-grid{grid-template-columns:1fr}
@@ -182,7 +170,7 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 }
 @media(max-width:560px){
   nav{padding:1rem 1.25rem}
-  .hero,.story,.pillars,.products,.cta{padding-left:1.25rem;padding-right:1.25rem}
+  .hero,.story,.pillars,.products,.insta,.cta{padding-left:1.25rem;padding-right:1.25rem}
   .notify-row{flex-direction:column;border-radius:20px}
   .notify-row button{border-radius:100px;margin:0 4px 4px;padding:.8rem}
   footer{padding:3rem 1.25rem 2rem}
@@ -193,13 +181,12 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 
 <nav id="nav">
   <a class="nav-logo" href="#">
-    <img id="nav-logo-img" src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
+    <img src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
     <span class="nav-wordmark">Lauk</span>
   </a>
   <span class="nav-pill">Something is coming</span>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-title">
@@ -226,7 +213,6 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item">Community sourced</span><span class="ticker-sep">·</span>
@@ -244,8 +230,7 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </div>
 
-<!-- STORY -->
-<section class="story" id="story-section">
+<section class="story">
   <div class="story-inner">
     <div>
       <p class="s-label">Our story</p>
@@ -270,7 +255,6 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- PILLARS -->
 <section class="pillars">
   <div class="pillars-inner">
     <div class="ph">
@@ -297,7 +281,6 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="products">
   <div class="products-inner">
     <div class="prod-head">
@@ -331,7 +314,6 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- INSTAGRAM -->
 <section class="insta">
   <div class="insta-inner">
     <div class="insta-head">
@@ -341,12 +323,12 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
     </div>
-    <div class="carousel-wrap">
+    <div class="insta-widget">
       <div data-behold-id="lCdBeh2sndMLaSmeDaho"></div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="cta-inner">
     <p class="cta-eyebrow">Coming soon</p>
@@ -362,18 +344,16 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
           <input type="email" name="email" placeholder="your@email.com" required>
           <button type="submit">Notify me</button>
         </div>
-        <div class="h-captcha" data-captcha="true"></div>
       </form>
       <p class="notify-note">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img id="footer-logo-img" src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
+      <img src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
       <span class="footer-wordmark">Lauk</span>
     </div>
     <div class="footer-links">
@@ -387,40 +367,17 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
   </div>
 </footer>
 
+<script type="module" src="https://w.behold.so/widget.js"></script>
 <script>
-  (function(){const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s);})();
-
-  window.addEventListener('DOMContentLoaded', () => {.addEventListener('scroll', () => {
+window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
   }, {passive:true});
-
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
   }, {threshold:.12});
   document.querySelectorAll('.fade').forEach(el => io.observe(el));
 });
-
-const form = document.getElementById('lauk-form');
-  if(form){
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      const data = new FormData(form);
-      const res = await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
-      const json = await res.json();
-      if(json.success){
-        btn.textContent = 'Done';
-        btn.style.opacity = '.55';
-        form.querySelector('input[type="email"]').disabled = true;
-        document.getElementById('ok').style.display = 'block';
-      } else {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
-    });
-  }
 </script>
 </body>
 </html>
