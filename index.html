@@ -18,6 +18,7 @@
 <meta name="twitter:image" content="https://lauk.com.my/og-image.jpg">
 
 <link rel="canonical" href="https://lauk.com.my">
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
@@ -142,6 +143,7 @@ nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-
 .notify-row input::placeholder{color:var(--muted);opacity:.55}
 .notify-row button{border:none;background:var(--red);color:#fff;font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 1.75rem;border-radius:100px;margin:4px;cursor:pointer;transition:all .2s;box-shadow:2px 2px 8px rgba(155,35,53,.28)}
 .notify-row button:hover{background:var(--red2)}
+.h-captcha{margin-bottom:.85rem;transform:scale(0.88);transform-origin:left center}
 .notify-note{font-size:.65rem;font-weight:300;letter-spacing:.06em;color:var(--muted);opacity:.6}
 .success-msg{display:none;font-size:.8rem;font-weight:400;letter-spacing:.04em;color:var(--green);margin-top:.85rem}
 
@@ -336,6 +338,7 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
           <input type="email" name="email" placeholder="your@email.com" required>
           <button type="submit">Notify me</button>
         </div>
+        <div class="h-captcha" data-captcha="true"></div>
       </form>
       <p class="notify-note">No spam. Unsubscribe anytime.</p>
     </div>
