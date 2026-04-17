@@ -182,7 +182,7 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 
 <nav id="nav">
   <a class="nav-logo" href="#">
-    <img id="nav-logo-img" src="" alt="Lauk" onerror="this.style.display='none'">
+    <img id="nav-logo-img" src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
     <span class="nav-wordmark">Lauk</span>
   </a>
   <span class="nav-pill">Something is coming</span>
@@ -327,9 +327,11 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
     <h2>Be the<br>first to<br><em>taste it.</em></h2>
     <p class="cta-sub">We're almost ready.<br>Get notified when Lauk arrives at your table.</p>
     <div class="notify-box">
-      <form onsubmit="handleNotify(event,'ok')">
+      <form action="https://formspree.io/f/xzdyrgka" method="POST" onsubmit="handleNotify(event,'ok')">
+        <input type="hidden" name="_subject" value="New Lauk early access signup">
+        <input type="hidden" name="_next" value="">
         <div class="notify-row">
-          <input type="email" placeholder="your@email.com" required>
+          <input type="email" name="email" placeholder="your@email.com" required>
           <button type="submit">Notify me</button>
         </div>
       </form>
@@ -343,7 +345,7 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img id="footer-logo-img" src="" alt="Lauk" onerror="this.style.display='none'">
+      <img id="footer-logo-img" src="./lauk-logo.png" alt="Lauk" onerror="this.style.display='none'">
       <span class="footer-wordmark">Lauk</span>
     </div>
     <div class="footer-links">
