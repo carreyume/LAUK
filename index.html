@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lauk — From our table to the world</title>
+<meta name="description" content="Something is coming. Real Malaysian flavour, built to travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#E8E0D4;
+  --bg2:#EDE6DC;
+  --ink:#1A1208;
+  --red:#9B2335;
+  --red2:#C13040;
+  --green:#1C3A2A;
+  --cream:#F5EDE0;
+  --muted:#7A6A55;
+  --neu-light:#F5EDE0;
+  --neu-dark:#C8BBA8;
+  --neu-s:6px 6px 14px #C8BBA8,-6px -6px 14px #F5EDE0;
+  --neu-in:inset 4px 4px 10px #C8BBA8,inset -4px -4px 10px #F5EDE0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+nav.scrolled{background:rgba(232,224,212,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(155,35,53,.07)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:34px;width:34px;border-radius:50%;object-fit:cover;box-shadow:var(--neu-s)}
+.nav-wordmark{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.08em;color:var(--ink)}
+.nav-pill{font-size:.55rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;padding:5px 16px;border-radius:100px;background:var(--bg);box-shadow:var(--neu-s);color:var(--muted)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 2.5rem 6rem;position:relative;overflow:hidden}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(4.5rem,12vw,10.5rem);font-weight:800;line-height:.88;letter-spacing:-.035em;color:var(--ink);margin-bottom:3rem}
+.hero-title .outline{-webkit-text-stroke:2.5px var(--ink);color:transparent;display:block}
+.hero-title .red{color:var(--red);display:block}
+.hero-title .plain{display:block}
+.hero-sub{font-family:'DM Sans',sans-serif;font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:300;font-style:italic;color:var(--muted);line-height:1.6;max-width:520px;margin-bottom:3.5rem;letter-spacing:.01em}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.btn-primary{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:1.05rem 2.5rem;border-radius:100px;border:none;background:var(--red);color:#fff;cursor:pointer;box-shadow:4px 4px 12px rgba(155,35,53,.3),-2px -2px 6px rgba(155,35,53,.08);transition:all .2s}
+.btn-primary:hover{background:var(--red2);transform:translateY(-1px);box-shadow:6px 6px 18px rgba(155,35,53,.35)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;transition:color .2s}
+.btn-ghost:hover{color:var(--ink)}
+.btn-ghost svg{transition:transform .2s}
+.btn-ghost:hover svg{transform:translateX(4px)}
+
+/* marquee */
+.marquee-wrap{overflow:hidden;margin-top:5rem;padding:1.5rem 0}
+.marquee{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
+.marquee span{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:800;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(155,35,53,.14);padding:0 2.5rem;user-select:none}
+.marquee span.sep{-webkit-text-stroke:1px rgba(155,35,53,.07)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ── TICKER ── */
+.ticker{background:var(--red);padding:.65rem 0;overflow:hidden}
+.ticker-track{display:flex;white-space:nowrap;animation:marquee 20s linear infinite}
+.ticker-item{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65);padding:0 2.5rem}
+.ticker-sep{color:rgba(255,255,255,.25)}
+
+/* ── STORY ── */
+.story{padding:8rem 2.5rem;background:var(--bg)}
+.story-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:8rem;align-items:center}
+.s-label{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;opacity:.8}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:800;line-height:.92;letter-spacing:-.035em;color:var(--ink);margin-bottom:2.5rem}
+.s-title em{font-style:italic;font-weight:400;color:var(--muted)}
+.s-body{font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.95;margin-bottom:1.25rem;letter-spacing:.01em}
+.chapters{display:flex;flex-direction:column;gap:4px}
+.chapter{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border-radius:16px;transition:all .35s;cursor:default}
+.chapter.active{background:var(--bg);box-shadow:var(--neu-s)}
+.ch-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1;color:var(--neu-dark);flex-shrink:0;transition:color .3s;letter-spacing:-.02em}
+.chapter.active .ch-num{color:var(--red)}
+.ch-era{font-family:'Syne Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;opacity:.6}
+.chapter.active .ch-era{opacity:1}
+.ch-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+
+/* ── PILLARS ── */
+.pillars{padding:8rem 2.5rem;background:var(--bg2)}
+.pillars-inner{max-width:1100px;margin:0 auto}
+.ph{margin-bottom:4.5rem}
+.ph-label{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:1.25rem;opacity:.8}
+.ph-title{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:800;line-height:.88;letter-spacing:-.035em;color:var(--ink)}
+.ph-title em{font-style:normal;-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pillar-card{padding:2.75rem 2.25rem;border-radius:24px;background:var(--bg2);box-shadow:var(--neu-s);transition:all .3s}
+.pillar-card:hover{transform:translateY(-4px);box-shadow:9px 9px 22px var(--neu-dark),-9px -9px 22px var(--neu-light)}
+.p-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:rgba(155,35,53,.1);line-height:1;margin-bottom:1.25rem;letter-spacing:-.03em}
+.p-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.85rem;letter-spacing:-.01em}
+.p-body{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.9}
+
+/* ── PRODUCTS ── */
+.products{padding:8rem 2.5rem;background:var(--bg)}
+.products-inner{max-width:1100px;margin:0 auto}
+.prod-head{margin-bottom:4.5rem}
+.prod-head h2{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:800;line-height:.88;letter-spacing:-.035em;color:var(--ink);margin-bottom:1.25rem}
+.prod-head h2 em{color:var(--red);font-style:normal}
+.prod-head p{font-size:1.05rem;font-weight:300;font-style:italic;color:var(--muted);line-height:1.7}
+.product-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.pcard{border-radius:28px;padding:3rem 2.75rem;background:var(--bg);box-shadow:var(--neu-s);position:relative;overflow:hidden;transition:all .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:9px 9px 24px var(--neu-dark),-9px -9px 24px var(--neu-light)}
+.pcard::after{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;border-radius:50%;opacity:.05;pointer-events:none}
+.pcard.sambal::after{background:var(--red)}
+.pcard.coffee::after{background:var(--green)}
+.pcard-tag{font-family:'Syne Mono',monospace;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.25rem}
+.pcard-tag.r{color:var(--red)}
+.pcard-tag.g{color:var(--green)}
+.pcard-name{font-family:'Syne',sans-serif;font-size:clamp(3rem,5vw,4.5rem);font-weight:800;line-height:.88;letter-spacing:-.03em;color:var(--ink);margin-bottom:.4rem}
+.pcard-sub{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.6;margin-bottom:1.75rem}
+.pcard-desc{font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:2rem}
+.pcard-attrs{display:flex;flex-wrap:wrap;gap:7px}
+.pattr{font-size:.56rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;background:var(--bg);box-shadow:var(--neu-in);color:var(--muted)}
+
+/* ── CTA ── */
+.cta{padding:8rem 2.5rem;background:var(--bg2)}
+.cta-inner{max-width:800px;margin:0 auto;text-align:center}
+.cta-eyebrow{font-family:'Syne Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:2rem;opacity:.8}
+.cta h2{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,8vw,8rem);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--ink);margin-bottom:1.75rem}
+.cta h2 em{color:var(--red);font-style:normal}
+.cta-sub{font-size:1.1rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:3.5rem;line-height:1.7}
+.notify-box{padding:2.5rem;border-radius:28px;background:var(--bg2);box-shadow:var(--neu-s);max-width:480px;margin:0 auto}
+.notify-row{display:flex;gap:0;border-radius:100px;overflow:hidden;background:var(--bg2);box-shadow:var(--neu-in);margin-bottom:.85rem}
+.notify-row input{flex:1;border:none;outline:none;padding:.9rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;color:var(--ink);background:transparent}
+.notify-row input::placeholder{color:var(--muted);opacity:.55}
+.notify-row button{border:none;background:var(--red);color:#fff;font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 1.75rem;border-radius:100px;margin:4px;cursor:pointer;transition:all .2s;box-shadow:2px 2px 8px rgba(155,35,53,.28)}
+.notify-row button:hover{background:var(--red2)}
+.notify-note{font-size:.65rem;font-weight:300;letter-spacing:.06em;color:var(--muted);opacity:.6}
+.success-msg{display:none;font-size:.8rem;font-weight:400;letter-spacing:.04em;color:var(--green);margin-top:.85rem}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:4rem 2.5rem 3rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:3rem}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand img{height:28px;width:28px;border-radius:50%;object-fit:cover;opacity:.5}
+.footer-wordmark{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.12em;color:rgba(245,237,224,.25)}
+.footer-links{display:flex;gap:2.5rem}
+.footer-links a{font-size:.6rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,237,224,.22);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,237,224,.55)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(245,237,224,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.58rem;font-weight:200;letter-spacing:.06em;color:rgba(245,237,224,.12)}
+.footer-tagline{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,237,224,.1)}
+
+/* ── FADE IN ── */
+.fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .story-inner{grid-template-columns:1fr;gap:4rem}
+  .pillar-grid{grid-template-columns:1fr}
+  .product-pair{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+  nav{padding:1rem 1.25rem}
+  .hero,.story,.pillars,.products,.cta{padding-left:1.25rem;padding-right:1.25rem}
+  .notify-row{flex-direction:column;border-radius:20px}
+  .notify-row button{border-radius:100px;margin:0 4px 4px;padding:.8rem}
+  footer{padding:3rem 1.25rem 2rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <img id="nav-logo-img" src="" alt="Lauk" onerror="this.style.display='none'">
+    <span class="nav-wordmark">Lauk</span>
+  </a>
+  <span class="nav-pill">Something is coming</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      <span class="plain">From</span>
+      <span class="outline">our&nbsp;table</span>
+      <span class="red">to the world.</span>
+    </h1>
+    <p class="hero-sub">Real Malaysian flavour, traced to its source.<br>Community-sourced. Small batch. Built to travel.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.querySelector('.cta').scrollIntoView({behavior:'smooth'})">Be the first to know</button>
+      <button class="btn-ghost" onclick="document.querySelector('.story').scrollIntoView({behavior:'smooth'})">
+        Our story
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Lauk</span><span class="sep">·</span><span>From our table to the world</span><span class="sep">·</span>
+      <span>Malaysian food</span><span class="sep">·</span><span>Coming soon</span><span class="sep">·</span>
+      <span>Lauk</span><span class="sep">·</span><span>From our table to the world</span><span class="sep">·</span>
+      <span>Malaysian food</span><span class="sep">·</span><span>Coming soon</span><span class="sep">·</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Community sourced</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Small batch</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Traceable</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Zero waste</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Made in Malaysia</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Built to travel</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Community sourced</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Small batch</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Traceable</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Zero waste</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Made in Malaysia</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Built to travel</span><span class="ticker-sep">·</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story-section">
+  <div class="story-inner">
+    <div>
+      <p class="s-label">Our story</p>
+      <h2 class="s-title fade">Some flavours take a lifetime to get right.<br><em>Ours took three.</em></h2>
+      <p class="s-body fade">Lauk began the way most Malaysian food stories do — at someone's table. We spent years learning, building, and yes, failing. A pandemic closed our kitchens. What it couldn't close was the conviction that Malaysian food deserves better.</p>
+      <p class="s-body fade">So we came back. Not with a kitchen. With a jar.</p>
+    </div>
+    <div class="chapters">
+      <div class="chapter fade">
+        <div class="ch-num">01</div>
+        <div><p class="ch-era">Pre-2017</p><p class="ch-name">The learning chapter</p></div>
+      </div>
+      <div class="chapter fade">
+        <div class="ch-num">02</div>
+        <div><p class="ch-era">2017 – 2022</p><p class="ch-name">The building chapter</p></div>
+      </div>
+      <div class="chapter active fade">
+        <div class="ch-num">03</div>
+        <div><p class="ch-era">2026 onward</p><p class="ch-name">The defining chapter</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillars-inner">
+    <div class="ph">
+      <p class="ph-label">What Lauk is</p>
+      <h2 class="ph-title">More than food.<br><em>A food system.</em></h2>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card fade">
+        <div class="p-num">01</div>
+        <h3 class="p-title">Community sourced</h3>
+        <p class="p-body">Every ingredient traces back to a real producer — a smallholder, a cooperative, a family who has been getting it right for generations. We find them, honour them, and bring their work to the world.</p>
+      </div>
+      <div class="pillar-card fade">
+        <div class="p-num">02</div>
+        <h3 class="p-title">Circular by design</h3>
+        <p class="p-body">No waste. By-products become new products. Packaging is recyclable. Every sen earned is reinvested back into the communities who make Lauk possible — building wealth, not dependency.</p>
+      </div>
+      <div class="pillar-card fade">
+        <div class="p-num">03</div>
+        <h3 class="p-title">Radically honest</h3>
+        <p class="p-body">Scan the QR on any Lauk product and meet the producer. See where it was grown. Know what's in it. No mystery. No fluff. Just food with a face.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="products-inner">
+    <div class="prod-head">
+      <h2>Something<br><em>delicious</em><br>is coming.</h2>
+      <p>Two products. Made properly. Available soon.</p>
+    </div>
+    <div class="product-pair">
+      <div class="pcard sambal fade">
+        <p class="pcard-tag r">Signature range</p>
+        <h3 class="pcard-name">Sambal</h3>
+        <p class="pcard-sub">Hand-crafted · Small batch</p>
+        <p class="pcard-desc">There is no neutral sambal. Every version tells you exactly where it came from — which chillies, which hands, which fire. Ours comes from a recipe we didn't invent. We just had the good sense to ask for it.</p>
+        <div class="pcard-attrs">
+          <span class="pattr">No preservatives</span>
+          <span class="pattr">Traceable</span>
+          <span class="pattr">Community made</span>
+        </div>
+      </div>
+      <div class="pcard coffee fade">
+        <p class="pcard-tag g">Origin range</p>
+        <h3 class="pcard-name">Coffee</h3>
+        <p class="pcard-sub">Single origin · Island-roasted</p>
+        <p class="pcard-desc">Sourced from producers who understand that the best things take time — a slow roast, a patient pour, a morning with nowhere to be. This coffee knows exactly where it came from.</p>
+        <div class="pcard-attrs">
+          <span class="pattr">Single origin</span>
+          <span class="pattr">Medium roast</span>
+          <span class="pattr">Traceable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">Coming soon</p>
+    <h2>Be the<br>first to<br><em>taste it.</em></h2>
+    <p class="cta-sub">We're almost ready.<br>Get notified when Lauk arrives at your table.</p>
+    <div class="notify-box">
+      <form onsubmit="handleNotify(event,'ok')">
+        <div class="notify-row">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit">Notify me</button>
+        </div>
+      </form>
+      <p class="notify-note">No spam. Unsubscribe anytime.</p>
+      <p class="success-msg" id="ok">You're on the list. We'll be in touch soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img id="footer-logo-img" src="" alt="Lauk" onerror="this.style.display='none'">
+      <span class="footer-wordmark">Lauk</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:contact@lauk.com.my">contact@lauk.com.my</a>
+      <a href="https://instagram.com/lauk.com.my" target="_blank" rel="noopener">@lauk.com.my</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Lauk. Made with intention in Malaysia.</span>
+    <span class="footer-tagline">From our table to the world</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
+  }, {passive:true});
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.12});
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+});
+
+function handleNotify(e, id){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Done';
+  btn.style.opacity = '.55';
+  btn.disabled = true;
+  e.target.querySelector('input').disabled = true;
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+</body>
+</html>
