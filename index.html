@@ -327,9 +327,10 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
     <h2>Be the<br>first to<br><em>taste it.</em></h2>
     <p class="cta-sub">We're almost ready.<br>Get notified when Lauk arrives at your table.</p>
     <div class="notify-box">
-      <form action="https://formspree.io/f/xzdyrgka" method="POST" onsubmit="handleNotify(event,'ok')">
-        <input type="hidden" name="_subject" value="New Lauk early access signup">
-        <input type="hidden" name="_next" value="">
+      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleNotify(event,'ok')">
+        <input type="hidden" name="access_key" value="51568a03-355c-49ad-965a-0d64a0192d35">
+        <input type="hidden" name="subject" value="New Lauk early access signup">
+        <input type="hidden" name="redirect" value="">
         <div class="notify-row">
           <input type="email" name="email" placeholder="your@email.com" required>
           <button type="submit">Notify me</button>
