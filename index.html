@@ -327,12 +327,11 @@ footer{background:var(--ink);padding:4rem 2.5rem 3rem}
     <h2>Be the<br>first to<br><em>taste it.</em></h2>
     <p class="cta-sub">We're almost ready.<br>Get notified when Lauk arrives at your table.</p>
     <div class="notify-box">
-      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleNotify(event,'ok')">
+      <form id="lauk-form">
         <input type="hidden" name="access_key" value="51568a03-355c-49ad-965a-0d64a0192d35">
         <input type="hidden" name="subject" value="New Lauk early access signup">
-        <input type="hidden" name="redirect" value="">
         <div class="notify-row">
-          <input type="email" name="email" placeholder="your@email.com" required>
+          <input type="email" name="email" id="lauk-email" placeholder="your@email.com" required>
           <button type="submit">Notify me</button>
         </div>
       </form>
@@ -372,15 +371,27 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.fade').forEach(el => io.observe(el));
 });
 
-function handleNotify(e, id){
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Done';
-  btn.style.opacity = '.55';
-  btn.disabled = true;
-  e.target.querySelector('input').disabled = true;
-  document.getElementById(id).style.display = 'block';
-}
+const form = document.getElementById('lauk-form');
+  if(form){
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
+      const json = await res.json();
+      if(json.success){
+        btn.textContent = 'Done';
+        btn.style.opacity = '.55';
+        form.querySelector('input[type="email"]').disabled = true;
+        document.getElementById('ok').style.display = 'block';
+      } else {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    });
+  }
 </script>
 </body>
 </html>
